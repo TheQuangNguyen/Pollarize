@@ -19,8 +19,8 @@
 3. App will generate a shareable link for user to share with others. 
 4. Users can create polling items but users can only delete the items that they create.
 5. Users can react to the item with :heart_eyes: (yes), :neutral_face: (neutral), and :rage: (no)
-6. Users can see the result and who voted so far
-7. Creator can delete the poll or poll will automatically deleted after expiration date
+6. Users can see the result and who voted so far.
+7. Creator can delete the poll or poll will automatically deleted after expiration date.
 
 ## TECH STACK
 
