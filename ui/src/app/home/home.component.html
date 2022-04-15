@@ -1,3 +1,34 @@
-<div class="container flex ">
-Create Poll Session
+<div class="flex justify-center">
+  <h1 class="font-bold text-6xl">
+    <span class="text-lightorange-100">P</span>
+    <span class="text-lightorange-200">o</span>
+    <span class="text-lightorange-300">l</span>
+    <span class="text-lightorange-400">l</span>
+    <span class="text-lightorange-500">a</span>
+    <span class="text-pink-100">r</span>
+    <span class="text-pink-200">i</span>
+    <span class="text-pink-300">z</span>
+    <span class="text-pink-400">e</span>
+  </h1>
 </div>
+<div class="h-screen w-screen flex justify-center items-center">
+  <button *ngIf="!isInSession" (click)="newSession()" class="rounded-full bg-gradient-to-r from-amber-500 to-fuchsia-400 py-4 px-6 h-16 text-lg">Create Poll Session</button>
+  <section *ngIf="isInSession" class="bg-rose-50 h-5/6 w-2/3 lg:w-1/3 rounded-3xl">
+    <div class="py-6 px-4">
+      <h1 class="text-xl text-black font-medium">Create New Poll</h1>
+    </div>
+    <form (ngSubmit)="createSession()" class="flex flex-col text-black px-4 space-y-1">
+      <label class="text-md font-medium">Title</label>
+      <input type="text" class="rounded" >
+      <label class="text-md font-medium">Description</label>
+      <input type="text" class="rounded" >
+      <label class="text-md font-medium">Expire In?</label>
+      <div class="flex justify-between">
+        <button *ngFor="let time of expireTimePresets" class="rounded-lg bg-orange-500 p-2">{{time}}</button>
+      </div>
+      <label class="text-md font-medium">Poll Items</label>
+    </form>
+  </section>
+</div>
+
+

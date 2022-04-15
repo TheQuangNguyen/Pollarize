@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  expireTimePresets = ["1h", "1d", "1w", "1m", "never"];
+  isInSession = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  newSession() {
+    this.isInSession = !this.isInSession;
+  }
+
+  createSession() {
+
+  }
 }
