@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   expireTimePresets = ["1h", "1d", "1w", "1m", "never"];
-  isInSession = false;
+  isInSession = true;
 
   constructor() { }
 
