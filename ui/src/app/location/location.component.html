@@ -1,0 +1,114 @@
+<div class="h-screen w-screen flex justify-center items-center">
+  <button
+    *ngIf="!isInSession"
+    (click)="newSession()"
+    class="rounded-full bg-gradient-to-r from-orange-300 to-pink-400 py-4 px-6 h-16 text-lg"
+  >
+    Create Poll Session
+  </button>
+  <section
+    *ngIf="isInSession"
+    class="bg-dark h-full mt-10 w-5/6 lg:w-1/3 rounded-3x"
+  >
+    <div class="py-6 px-4">
+      <h1 class="text-xl text-gray-400 font-medium">CREATE NEW POLL</h1>
+    </div>
+    <form
+      (ngSubmit)="createSession()"
+      class="flex flex-col text-gray-400 px-4 space-y-1"
+    >
+      <label for="title" class="text-md font-medium">Title</label>
+      <input
+        type="text"
+        name="title"
+        class="rounded bg-dark outline-none border-b-2 border-orange-400 pb-3 pt-1"
+      />
+      <label for="date" class="text-md font-medium">Date</label>
+      <input
+        type="date"
+        name="date"
+        class="rounded bg-dark outline-none border-b-2 border-gray-600 pb-3 pt-1"
+      />
+      <label for="time" class="text-md font-medium">Time</label>
+      <input
+        type="time"
+        name="time"
+        class="rounded bg-dark outline-none border-b-2 border-gray-600 pb-3 pt-1"
+      />
+      <label for="expireIn" class="text-md font-medium">Expire In?</label>
+      <div class="grid grid-cols-5 border-2 border-gray-700 rounded-lg p-2">
+        <button
+          type="button"
+          *ngFor="let time of expireTimePresets"
+          class="rounded-lg p-2 bg-dark transition ease-in-out duration-150 bg-gradient-to-r hover:from-orange-300 hover:to-pink-400 hover:text-white focus:from-orange-300 focus:to-pink-400 focus:text-white"
+        >
+          {{ time }}
+        </button>
+      </div>
+      <label class="text-md font-medium">Poll Items</label>
+      <div class="flex">
+        <button
+          type="button"
+          class="bg-gradient-to-br from-orange-300 to-pink-400 rounded-full h-12 w-12 text-white text-2xl font-extrabold"
+          (click)="togglePollItemModal()"
+        >
+          <span class="relative bottom-1 left-0">+</span>
+        </button>
+      </div>
+    </form>
+  </section>
+</div>
+
+<!-- <div
+  class="overflow-y-auto overflow-x-hidden fixed z-50 w-full inset-0 h-full flex justify-center items-center"
+  [ngClass]="showModal ? '' : 'hidden'"
+> -->
+<div
+  class="overflow-y-auto overflow-x-hidden fixed z-50 w-full inset-0 h-full flex justify-center items-center"
+>
+  <div class="p-4 w-full max-w-2xl h-auto">
+    <div
+      class="bg-gradient-to-r from-orange-300 to-pink-400 rounded-lg shadow dark:bg-gray-700"
+    >
+      <div class="flex justify-end p-2">
+        <button
+          type="button"
+          class="text-black bg-transparent hover:text-gray-700 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+          (click)="togglePollItemModal()"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <form class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" action="#">
+        <h3 class="text-xl font-medium text-gray-900 dark:text-white">
+          Location Item
+        </h3>
+        <div>
+          <label
+            for="address"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Address</label
+          >
+          <input
+            type="text"
+            name="address"
+            class="bg-gray-700 border border-gray-900 text-white text-sm rounded-lg focus:ring-orange-500 focus:border-pink-300 block w-full p-2.5 placeholder-gray-400"
+            placeholder="Space Needle Broad Street, Seattle WA"
+            required=""
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
