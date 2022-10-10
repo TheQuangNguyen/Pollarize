@@ -1,7 +1,7 @@
 
 # POLLARIZE APP
 
-**Pollarize** app is made for those group of friends or coworkers that are indecisive on getting to a group agreement whether it is what to do on a Friday's night or where to eat for a get-together. This is meant to be a simple and quick way to poll opinions of everyone in your group in order to democratically come to an agreement or perhaps just see how "polarizing" all your preferences can be.  
+(WORK IN PROGRESS) **Pollarize** app is made for those group of friends or coworkers that are indecisive on getting to a group agreement whether it is what to do on a Friday's night or where to eat for a get-together. This is meant to be a simple and quick way to poll opinions of everyone in your group in order to democratically come to an agreement or perhaps just see how "polarizing" all your preferences can be.  
 
 ---
 
